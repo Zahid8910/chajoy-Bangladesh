@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact ChaJoy Bangladesh</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="auth-nav.js" defer></script>
+    <script src="nav-animation.js" defer></script>
+</head>
+<body class="about-page">
+    <header class="topbar">
+        <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="logo">
+        <h2 class="site_title">ChaJoy Bangladesh</h2>
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="home.html" data-role-home>Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="branches.html">Branches</a>
+            <a href="about.html">About</a>
+            <a href="reviews.html" onclick="alert('Reviews are not available yet, but they will be available soon.'); return false;">Reviews</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+        <button class="sign_up" type="button" onclick="window.location.href='Sign_up.html'">
+            <img src="Signup.png" alt="" class="signup_icon">
+            <span class="sign_up_text">Sign Up</span>
+        </button>
+        <button class="sign_out public-sign-out" type="button" hidden>
+            <img src="sign_out.png" alt="" class="signout_icon">
+            <span class="sign_out_text">Sign Out</span>
+        </button>
+        <button class="order" type="button" onclick="window.location.href='menu.html'">
+            <img src="order.png" alt="" class="order_icon">
+            <span class="order_text">Start an Order</span>
+        </button>
+        <div class="nav_box"></div>
+    </header>
+
+    <main class="contact-content">
+        <section class="contact-heading" aria-labelledby="contact-title">
+            <p class="about-kicker">We are here to help</p>
+            <h1 id="contact-title">Contact ChaJoy.</h1>
+            <p>For now, our team is available at every ChaJoy branch. Reach out in person for help with an order, menu questions, feedback, or information about working with us.</p>
+        </section>
+
+        <section class="contact-list" aria-label="Ways to contact ChaJoy">
+            <article class="contact-item">
+                <h2>Visit a branch</h2>
+                <p>Speak directly with the ChaJoy team at your nearest branch for orders, menu guidance, and branch assistance.</p>
+            </article>
+            <article class="contact-item">
+                <h2>Share feedback</h2>
+                <p>We welcome your suggestions about our drinks, service, and customer experience. Your feedback helps us improve.</p>
+            </article>
+            <article class="contact-item">
+                <h2>Business enquiries</h2>
+                <p>For supplier or franchise enquiries, please share your name, preferred location, and enquiry with the team at a ChaJoy branch.</p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

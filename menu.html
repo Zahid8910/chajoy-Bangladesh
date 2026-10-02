@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaJoy Bangladesh | Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="employee.css">
+    <script src="auth-nav.js" defer></script>
+    <script src="employee-profile.js" defer></script>
+    <script src="menu.js" defer></script>
+    <script src="nav-animation.js" defer></script>
+</head>
+<body class="menu-page">
+    <header class="topbar menu-header">
+        <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="logo">
+        <h2 class="site_title">ChaJoy Bangladesh</h2>
+        <nav class="navbar">
+            <a href="home.html" data-role-home>Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="branches.html">Branches</a>
+            <a href="about.html">About</a>
+            <a href="reviews.html" onclick="alert('Reviews are not available yet, but they will be available soon.'); return false;">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="sign_up" onclick="window.location.href='Sign_up.html'">
+            <img src="Signup.png" alt="Sign Up Icon" class="signup_icon">
+            <span class="sign_up_text">Sign Up</span>
+        </button>
+        <button class="sign_out menu-sign-out" id="menuSignOut" type="button">
+            <img src="sign_out.png" alt="Sign out Icon" class="signout_icon">
+            <span class="sign_out_text">Sign Out</span>
+        </button>
+        <button class="order" onclick="window.location.href='menu.html'">
+            <img src="order.png" alt="Order Icon" class="order_icon">
+            <span class="order_text">Start an Order</span>
+        </button>
+        <div class="nav_box"></div>
+    </header>
+
+    <main class="menu-page-content">
+        <section class="menu-heading" aria-labelledby="menu-title">
+            <h1 id="menu-title">Menu</h1>
+            <p>Freshly prepared drinks and ice cream, with prices shown clearly in BDT.</p>
+        </section>
+
+        <div class="menu-layout">
+            <section class="catalog" aria-label="Drink menu">
+                <nav class="category-tabs" aria-label="Drink categories">
+                    <button type="button" class="category-tab active" data-category="all">All drinks</button>
+                    <button type="button" class="category-tab" data-category="sundae">Sundaes</button>
+                    <button type="button" class="category-tab" data-category="tea">Tea</button>
+                    <button type="button" class="category-tab" data-category="milk-tea">Milk tea</button>
+                    <button type="button" class="category-tab" data-category="shake">Shakes</button>
+                    <button type="button" class="category-tab" data-category="ice-cream">Ice cream</button>
+                </nav>
+
+                <div class="drink-list">
+                    <article class="drink-card" data-category="sundae" data-name="Strawberry Sundae" data-price="200">
+                        <div class="drink-swatch strawberry"></div><div class="drink-details"><h2>Strawberry Sundae</h2><p>Sweet strawberry cream dessert.</p></div><strong class="drink-price">BDT 200</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="sundae" data-name="Blueberry Sundae" data-price="200">
+                        <div class="drink-swatch blueberry"></div><div class="drink-details"><h2>Blueberry Sundae</h2><p>Blueberry with a creamy finish.</p></div><strong class="drink-price">BDT 200</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="sundae" data-name="Mango Sundae" data-price="200">
+                        <div class="drink-swatch mango"></div><div class="drink-details"><h2>Mango Sundae</h2><p>Bright mango flavor with cream.</p></div><strong class="drink-price">BDT 200</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="sundae" data-name="Peach Sundae" data-price="200">
+                        <div class="drink-swatch peach"></div><div class="drink-details"><h2>Peach Sundae</h2><p>Soft peach flavor and creamy texture.</p></div><strong class="drink-price">BDT 200</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="tea" data-name="Fresh Lemon Tea" data-price="100">
+                        <div class="drink-swatch lemon"></div><div class="drink-details"><h2>Fresh Lemon Tea</h2><p>Refreshing lemon tea.</p></div><strong class="drink-price">BDT 100</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="tea" data-name="Jasmine Green Tea" data-price="100">
+                        <div class="drink-swatch jasmine"></div><div class="drink-details"><h2>Jasmine Green Tea</h2><p>Light, fragrant green tea.</p></div><strong class="drink-price">BDT 100</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="tea" data-name="Strawberry Tea" data-price="120">
+                        <div class="drink-swatch strawberry-tea"></div><div class="drink-details"><h2>Strawberry Tea</h2><p>Fruit tea with strawberry notes.</p></div><strong class="drink-price">BDT 120</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="tea" data-name="Guava Green Tea" data-price="100">
+                        <div class="drink-swatch guava"></div><div class="drink-details"><h2>Guava Green Tea</h2><p>Guava blended with green tea.</p></div><strong class="drink-price">BDT 100</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="milk-tea" data-name="Brown Sugar Boba Milk" data-price="180">
+                        <div class="drink-swatch brown-sugar"></div><div class="drink-details"><h2>Brown Sugar Boba Milk</h2><p>Rich milk tea with brown sugar boba.</p></div><strong class="drink-price">BDT 180</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="milk-tea" data-name="Classic Milk Tea" data-price="170">
+                        <div class="drink-swatch classic-milk"></div><div class="drink-details"><h2>Classic Milk Tea</h2><p>Comforting black tea with milk.</p></div><strong class="drink-price">BDT 170</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="milk-tea" data-name="Strawberry Boba Milk" data-price="180">
+                        <div class="drink-swatch strawberry-boba"></div><div class="drink-details"><h2>Strawberry Boba Milk</h2><p>Strawberry milk tea with boba.</p></div><strong class="drink-price">BDT 180</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="milk-tea" data-name="Blueberry Milk Tea" data-price="160">
+                        <div class="drink-swatch blueberry-milk"></div><div class="drink-details"><h2>Blueberry Milk Tea</h2><p>Blueberry milk tea, served chilled.</p></div><strong class="drink-price">BDT 160</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="sundae" data-name="Chocolate Oreo Sundae" data-price="250">
+                        <div class="drink-swatch chocolate"></div><div class="drink-details"><h2>Chocolate Oreo Sundae</h2><p>Chocolate dessert with Oreo.</p></div><strong class="drink-price">BDT 250</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="shake" data-name="Peach Shake" data-price="100">
+                        <div class="drink-swatch peach-shake"></div><div class="drink-details"><h2>Peach Shake</h2><p>Cold, smooth peach shake.</p></div><strong class="drink-price">BDT 100</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="shake" data-name="Blueberry Shake" data-price="150">
+                        <div class="drink-swatch blueberry-shake"></div><div class="drink-details"><h2>Blueberry Shake</h2><p>Thick blueberry shake.</p></div><strong class="drink-price">BDT 150</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="ice-cream" data-name="Vanilla Ice Cream" data-price="80">
+                        <div class="drink-swatch vanilla"></div><div class="drink-details"><h2>Vanilla Ice Cream</h2><p>Classic smooth vanilla ice cream.</p></div><strong class="drink-price">BDT 80</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                    <article class="drink-card" data-category="ice-cream" data-name="Matcha Ice Cream" data-price="80">
+                        <div class="drink-swatch matcha"></div><div class="drink-details"><h2>Matcha Ice Cream</h2><p>Distinctive green tea ice cream.</p></div><strong class="drink-price">BDT 80</strong><button class="add-button" type="button">Add</button>
+                    </article>
+                </div>
+            </section>
+
+            <aside class="cart-panel" aria-labelledby="cart-title">
+                <div class="cart-heading"><h2 id="cart-title">Your order</h2><span id="cartCount">0 items</span></div>
+                <label class="branch-label" for="orderBranch">Choose a pickup branch</label>
+                <select id="orderBranch" class="branch-select">
+                    <option value="">Select a branch</option>
+                    <option>Laxmibazar Branch</option>
+                    <option>Uttara Branch</option>
+                    <option>Rampura Branch</option>
+                    <option>Mohammadpur Branch</option>
+                    <option>Banasree Branch</option>
+                    <option>Badda Branch</option>
+                    <option disabled>Shonir Akhra Branch (Unavailable - choose another branch)</option>
+                    <option disabled>Aftabnagar Branch (Unavailable - choose another branch)</option>
+                    <option>Mirpur 2 Branch</option>
+                    <option>Mirpur 10 Branch</option>
+                    <option>Bashundhara Branch</option>
+                    <option>Kochukhet Branch</option>
+                </select>
+                <div id="cartItems" class="cart-items"><p class="empty-cart">Your order is empty.</p></div>
+                <div class="cart-total"><span>Total</span><strong id="cartTotal">BDT 0</strong></div>
+                <button type="button" id="clearCart" class="clear-button">Clear order</button>
+                <button type="button" id="receiptButton" class="checkout-button">Get receipt</button>
+                <p id="orderMessage" class="order-message" role="status"></p>
+            </aside>
+        </div>
+
+        <section id="customerOrdersPanel" class="customer-orders-panel" aria-labelledby="customerOrdersTitle" hidden>
+            <div class="customer-orders-heading">
+                <div>
+                    <p class="tracking-label">Customer panel</p>
+                    <h2 id="customerOrdersTitle">Order notifications</h2>
+                </div>
+                <span class="tracking-note">Branch updates appear here</span>
+            </div>
+            <div id="customerNotification" class="customer-notification" role="status"></div>
+            <div id="customerOrders" class="customer-orders">
+                <p class="empty-cart">Your submitted orders will appear here.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="loginPrompt" class="login-prompt hidden" role="dialog" aria-modal="true" aria-labelledby="loginPromptTitle">
+        <section class="login-prompt-content">
+            <button type="button" id="loginPromptClose" class="login-prompt-close" aria-label="Close">&times;</button>
+            <h2 id="loginPromptTitle">Login required</h2>
+            <p id="loginPromptMessage">Please login or register yourself before adding items to an order.</p>
+            <div class="login-prompt-actions">
+                <a href="Sign_up.html" class="prompt-login-button">Login</a>
+                <a href="Registration.html" class="prompt-register-button">Register</a>
+            </div>
+        </section>
+    </div>
+
+    <div id="receiptModal" class="receipt-modal hidden" role="dialog" aria-modal="true" aria-labelledby="receiptTitle">
+        <section class="receipt" aria-label="Unpaid order receipt">
+            <button type="button" id="receiptClose" class="receipt-close" aria-label="Close receipt">&times;</button>
+            <p class="receipt-label">Branch order receipt</p>
+            <h2 id="receiptTitle">Your receipt</h2>
+            <div class="receipt-status">UNPAID</div>
+            <p class="receipt-note">Show this receipt at the ChaJoy cafe counter. Pay there, receive your printed receipt, and wait until your order is called.</p>
+            <div id="receiptDetails" class="receipt-details"></div>
+            <div class="receipt-total"><span>Total to pay at branch</span><strong id="receiptTotal">BDT 0</strong></div>
+            <button type="button" id="receivedButton" class="received-button" hidden>Order received</button>
+            <p id="receiptMessage" class="receipt-message" role="status"></p>
+        </section>
+    </div>
+</body>
+</html>

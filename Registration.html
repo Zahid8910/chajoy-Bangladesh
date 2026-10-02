@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Register</title>
+        <link rel="stylesheet" href="registration.css" />
+        <script src="registration.js" defer></script>
+        <script src="nav-animation.js" defer></script>
+    </head>
+    <body>
+   <div id="registrationSuccessModal" class="registration-success-modal hidden" aria-live="polite">
+       <div class="registration-success-content">
+           <h3>Registration Successful</h3>
+           <p>Welcome! Your account has been created. Redirecting to Login…</p>
+       </div>
+   </div>
+  <header class="topbar">
+        <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="logo">
+        <h2 class="site_title">ChaJoy Bangladesh</h2>
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="branches.html">Branches</a>
+            <a href="about.html">About</a>
+            <a href="reviews.html" onclick="alert('Reviews are not available yet, but they will be available soon.'); return false;">Reviews</a>
+            <a href="contact.html">Contact</a>
+            <button class="sign_up" onclick="window.location.href='Sign_up.html'">
+            <img src="Signup.png" alt="Sign Up Icon" class="signup_icon">
+            <span class="sign_up_text">Sign Up</span>
+        </button>
+        </nav>
+        <div class="nav_box"></div>
+    </header>
+   <div class="Register">
+        <!--Registration-->
+         <div class="box"></div>
+         <div class="reg_title">Registration</div>
+         <p class="identity_R">Register as</p>
+         <div class="registration-radio-group" id="registrationRoleGroup">
+            <label class="identity_R_radio">
+            <input type="radio" name="identity" value="employee">Employee</label>
+            <label class="identity_R_radio">
+            <input type="radio" name="identity" value="customer">Customer</label>
+         </div>
+         <div id="registrationRoleError" class="field-error role-error"></div>
+    
+        <p class="username_text">Username</p>
+        <p class="email_rtext">Email</p>
+        <p class="phone_text">Phone Number</p>
+        <p class="gender_text">Gender</p>
+        <p class="pass_rtext">Password</p>
+        <p class="retype_pass">Retype the Password</p>
+        <input type="text" class="username_input" id="registrationUsername" placeholder="Enter your username" required />
+        <div id="registrationUsernameError" class="field-error username-error"></div>
+        <img src="Person.png" alt="user" class="user_img">
+        <input type="email" class="e_rinput" id="registrationEmail" placeholder="Enter your email" required />
+        <div id="registrationEmailError" class="field-error email-error"></div>
+        <img src="Email1.png" alt="email" class="email_img" >
+        <input type="tel" class="phone_input" id="registrationPhone" placeholder="Enter your phone number" required />
+        <div id="registrationPhoneError" class="field-error phone-error"></div>
+        <img src="Call.png" alt="phone" class="phone_img">
+        <div class="phone_box"></div>
+        <div class="phone_img"></div>
+        <input type="password" class="p_rinput" id="registrationPassword" placeholder="Enter your password" required />
+        <div id="registrationPasswordError" class="field-error password-error"></div>
+        <input type="password" class="retype_input" id="registrationRetypePassword" placeholder="Retype your password" required />
+        <div id="registrationRetypePasswordError" class="field-error retype-password-error"></div>
+        <div class="user_box"></div>
+        <div class="e_rbox"></div>
+        <button type="button" class="confirm_button" id="registrationConfirm">Confirm</button>
+        <div class="p_rbox"></div>
+        <div class="retype_box"></div>
+        <div class="registration-gender-group" id="registrationGenderGroup">
+            <label class="gender_radio gender-male">
+            <input type="radio" name="gender" value="Male">Male</label>
+            <label class="gender_radio gender-female">
+            <input type="radio" name="gender" value="Female">Female</label>
+            <label class="gender_radio gender-other">
+            <input type="radio" name="gender" value="Other">Other</label>
+        </div>
+        <div id="registrationGenderError" class="field-error gender-error"></div>
+
+         <!--Set Pass-->
+         <p class="Imp_info">Your security question helps protect your account if you forget your password. Choose a question and answer that you can remember but others cannot easily guess.</p>
+         <div class="secure_box"></div>
+         <div class="set_pass">Account Security</div>
+         <p class="security_ques_text">Security Question</p>
+         <div class="security-questions_box"></div>
+         <label for="security-question">Security Question</label>
+         <img src="Question.png" class="question_img">
+         <select class="security-question" id="registrationQuestion" name="security-question" required>
+         <option value="">Select a security question</option>
+         <option value="mother">What is your mother's maiden name?</option>
+          <option value="pet">What was the name of your first pet?</option>
+          <option value="food">What is your favorite food?</option>
+          <option value="city">What city were you born in?</option>
+          <option value="custom">Customize your question.</option>
+         </select>
+         <div id="registrationQuestionError" class="field-error question-error"></div>
+         <div class="registration-custom-question hidden" id="registrationCustomQuestionField">
+             <label for="registrationCustomQuestion">Write your security question</label>
+             <textarea id="registrationCustomQuestion" placeholder="Enter your question" rows="2" required></textarea>
+         </div>
+         <div class="answer">Answer</div>
+         <div class="answer_box"></div>
+         <img src="Answer.png" class="answer_img">
+        <img src="Lock.png" class="pass_img">
+         <input type="text" class="answer_input" id="registrationAnswer" placeholder="Type your answer here" required />
+         <div id="registrationAnswerError" class="field-error answer-error"></div>
+         <img src="re_password.png" class="repass_img">
+        </div>
+    </body>
+</html>

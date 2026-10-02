@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="employee.css" />
+  <script src="employee.js" defer></script>
+  <script src="employee-profile.js" defer></script>
+  <script src="nav-animation.js" defer></script>
+</head>
+<body>
+  <header class="employee-header">
+    <a class="brand" href="employee.html">
+      <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="employee-logo">
+      <span class="employee-site-title">ChaJoy Bangladesh</span>
+      <span class="employee-role-label">Employee Desk</span>
+    </a>
+    <nav class="employee-nav" aria-label="Employee navigation">
+      <a href="employee.html" aria-current="page">Dashboard</a>
+      <a href="employee-status.html">Status</a>
+      <a href="menu.html">Menu</a>
+      <a href="branches.html">Branches</a>
+      <a href="employee-about.html">About</a>
+      <a href="employee-reviews.html">Reviews</a>
+      <a href="employee-contact.html">Contact</a>
+    </nav>
+    <div class="employee-header-actions">
+      <button type="button" id="employeeProfileButton" class="employee-profile-button">
+        <img src="edit_profile.png" alt="Profile icon" class="employee-profile-icon">
+        <span>Profile</span>
+      </button>
+      <button type="button" id="employeeSignOut" class="sign-out">
+        <img src="sign_out.png" alt="" class="employee-sign-out-icon">
+        <span>Sign out</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="employee-main">
+    <section class="welcome-section">
+      <p class="eyebrow">Branch operations</p>
+      <h1>Manage customer orders</h1>
+      <p>Select a branch to see incoming orders and accept or reject them.</p>
+    </section>
+
+    <section class="branch-picker" aria-labelledby="branchPickerTitle">
+      <label for="employeeBranch" id="branchPickerTitle">Choose your branch</label>
+      <select id="employeeBranch">
+        <option value="">Select a branch</option>
+      </select>
+    </section>
+
+    <section class="orders-section" aria-labelledby="ordersTitle">
+      <div class="orders-heading">
+        <div>
+          <p class="eyebrow">Incoming orders</p>
+          <h2 id="ordersTitle">Select a branch to begin</h2>
+        </div>
+        <span id="orderCount" class="order-count">0 orders</span>
+      </div>
+      <div id="ordersList" class="orders-list">
+        <p class="empty-state">Orders for the selected branch will appear here.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="rejectModal" class="reject-modal" hidden>
+    <section class="reject-dialog" role="dialog" aria-modal="true" aria-labelledby="rejectTitle">
+      <button type="button" id="rejectClose" class="reject-close" aria-label="Close rejection form">&times;</button>
+      <p class="eyebrow">Order action</p>
+      <h2 id="rejectTitle">Reject this order</h2>
+      <label for="rejectReason">Why are you rejecting this order?</label>
+      <textarea id="rejectReason" rows="4" placeholder="Enter the reason for the customer."></textarea>
+      <p id="rejectMessage" class="reject-message" role="status"></p>
+      <div class="reject-actions">
+        <button type="button" id="rejectCancel" class="reject-cancel">Cancel</button>
+        <button type="button" id="rejectSubmit" class="reject-submit">Reject order</button>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile | ChaJoy Bangladesh</title>
+    <link rel="stylesheet" href="edit_profile.css">
+    <script src="edit_profile.js" defer></script>
+    <script src="nav-animation.js" defer></script>
+</head>
+<body>
+    <header class="profile-header">
+        <a href="Home_login.html" class="brand-link" aria-label="Return to customer home">
+            <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="profile-logo">
+            <span class="profile-site-title">ChaJoy Bangladesh</span>
+        </a>
+            <nav class="profile-nav" aria-label="Customer navigation">
+                <a href="Home_login.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="branches.html">Branches</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button type="button" class="profile-sign-out" onclick="sessionStorage.removeItem('chajoyLoggedInRole'); window.location.href='home.html'">
+                <img src="sign_out.png" alt="" class="profile-sign-out-icon">
+                <span>Sign Out</span>
+            </button>
+        <a href="Home_login.html" class="back-link">Back to Home</a>
+    </header>
+
+    <main class="profile-page">
+        <section class="profile-card" aria-labelledby="profile-title">
+            <div class="profile-intro">
+                <p class="eyebrow">Customer account</p>
+                <h1 id="profile-title">Your profile</h1>
+                <p>Review your ChaJoy account information and update it whenever you need.</p>
+            </div>
+
+            <section id="profileSummary" class="profile-summary" aria-labelledby="summary-title">
+                <h2 id="summary-title">Your information</h2>
+                <dl class="details-list">
+                    <div><dt>Full name</dt><dd id="summaryName">Not added yet</dd></div>
+                    <div><dt>Username</dt><dd id="summaryUsername">Not added yet</dd></div>
+                    <div><dt>Email</dt><dd id="summaryEmail">Not added yet</dd></div>
+                    <div><dt>Contact number</dt><dd id="summaryContact">Not added yet</dd></div>
+                    <div><dt>Password</dt><dd id="summaryPassword">Not set</dd></div>
+                    <div><dt>Gender</dt><dd id="summaryGender">Not selected</dd></div>
+                </dl>
+                <p id="profileMessage" class="profile-message" role="status"></p>
+                <div class="profile-actions">
+                    <button type="button" id="editButton" class="save-button">Edit</button>
+                </div>
+            </section>
+
+            <section id="passwordPanel" class="password-panel" hidden aria-labelledby="password-title">
+                <h2 id="password-title">Change password</h2>
+                <p>Enter your current password, then choose and confirm a new one.</p>
+                <form id="passwordForm" class="password-form">
+                    <label>
+                        Previous password
+                        <input type="password" id="previousPassword" autocomplete="current-password" required>
+                    </label>
+                    <label>
+                        New password
+                        <input type="password" id="newPassword" autocomplete="new-password" required>
+                    </label>
+                    <label>
+                        Retype new password
+                        <input type="password" id="retypeNewPassword" autocomplete="new-password" required>
+                    </label>
+                    <p id="passwordMessage" class="profile-message" role="status"></p>
+                    <div class="profile-actions">
+                        <button type="button" id="passwordCancelButton" class="cancel-button">Cancel</button>
+                        <button type="submit" class="save-button">Change password</button>
+                    </div>
+                </form>
+            </section>
+
+            <form id="profileForm" class="profile-form">
+                <h2>Edit your information</h2>
+                <div class="form-grid">
+                    <label>
+                        Full name
+                        <input type="text" id="profileName" placeholder="Enter your full name" autocomplete="name">
+                    </label>
+                    <label>
+                        Username
+                        <input type="text" id="profileUsername" placeholder="Choose a username" autocomplete="username">
+                    </label>
+                    <label>
+                        Email
+                        <input type="email" id="profileEmail" placeholder="Enter your email" autocomplete="email" required>
+                    </label>
+                    <label>
+                        Contact number
+                        <input type="tel" id="profileContact" placeholder="Enter your contact number" autocomplete="tel">
+                    </label>
+                    <label>
+                        Gender
+                        <select id="profileGender">
+                            <option value="">Select your gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="profile-actions">
+                    <button type="button" id="cancelButton" class="cancel-button">Cancel</button>
+                    <button type="submit" class="save-button">Save changes</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChaJoy Bangladesh | Admin Dashboard</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../admin.css" />
+  <script>
+    const activeAdminRole = sessionStorage.getItem('chajoyLoggedInRole');
+    const isPublicRoute = window.location.pathname.includes('/public/');
+    if (!activeAdminRole) {
+      window.location.href = isPublicRoute ? '../Sign_up.html' : 'Sign_up.html';
+    } else if (activeAdminRole !== 'admin') {
+      window.location.href = isPublicRoute ? '../home.html' : 'home.html';
+    }
+  </script>
+  <script src="../admin.js" defer></script>
+  <script src="../nav-animation.js" defer></script>
+</head>
+<body class="admin-page" data-admin-page="admin">
+  <header class="topbar admin-topbar">
+    <img src="../logo-b.png" alt="ChaJoy Bangladesh Logo" class="logo" />
+    <h2 class="site_title">ChaJoy Bangladesh</h2>
+    <nav class="navbar admin-navbar" aria-label="Admin navigation">
+      <a href="admin.php?action=admin" data-admin-nav="admin">Dashboard</a>
+      <a href="admin.php?action=admin_users" data-admin-nav="admin_users">Users</a>
+      <a href="admin.php?action=admin_branches" data-admin-nav="admin_branches">Branches</a>
+      <a href="../admin-about.html">About</a>
+      <a href="../admin-reviews.html">Reviews</a>
+      <a href="../admin-contact.html">Contact</a>
+    </nav>
+    <div class="admin-header-actions">
+      <button type="button" class="nav-profile-link profile-button" id="profileToggle" aria-label="Open admin profile">
+        <img src="../Person.png" alt="Profile icon" class="profile-icon" />
+        <span>Profile</span>
+      </button>
+      <button type="button" class="nav-signout" id="adminSignOut">
+        <img src="../sign_out.png" alt="" class="signout_icon">
+        <span class="sign_out_text">Sign out</span>
+      </button>
+    </div>
+    <div class="nav_box"></div>
+  </header>
+
+  <aside id="adminProfilePanel" class="admin-profile-panel hidden" aria-labelledby="admin-profile-title" aria-modal="true" role="dialog">
+    <div class="admin-profile-dialog">
+      <div class="profile-panel-header">
+        <div>
+          <p class="eyebrow">Admin account</p>
+          <h2 id="admin-profile-title">Edit your profile</h2>
+        </div>
+        <button type="button" id="closeProfilePanel" aria-label="Close profile editor">×</button>
+      </div>
+      <div id="adminProfileContent" class="profile-content"></div>
+      <form id="adminProfileForm" class="profile-form">
+        <div class="profile-form-grid">
+          <label>
+            Username
+            <input type="text" id="profileUsername" name="username" />
+          </label>
+          <label>
+            Full name
+            <input type="text" id="profileFullName" name="full_name" />
+          </label>
+          <label>
+            Email
+            <input type="email" id="profileEmail" name="email" />
+          </label>
+          <label>
+            Gender
+            <select id="profileGender" name="gender">
+              <option value="">Select</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </label>
+          <label>
+            Phone
+            <input type="tel" id="profilePhone" name="contact" />
+          </label>
+          <label>
+            New password (optional)
+            <input type="password" id="profilePassword" name="password" autocomplete="new-password" placeholder="Leave blank to keep current password" />
+          </label>
+        </div>
+        <div class="button-row">
+          <button type="button" id="cancelProfileEdit" class="cancel-button">Cancel</button>
+          <button type="submit" class="save-button">Save profile</button>
+        </div>
+        <p id="profileMessage" class="admin-message"></p>
+      </form>
+    </div>
+  </aside>
+
+  <main class="admin-dashboard">
+    <section id="dashboard" class="dashboard-shell">
+      <div class="dashboard-header">
+        <p class="eyebrow">Administrative overview</p>
+        <h1>Admin Dashboard</h1>
+        <p class="dashboard-subtitle">Welcome back. Manage the ChaJoy platform with a clean overview of your users, menu and branch activity.</p>
+      </div>
+
+      <div id="statsGrid" class="stats-grid"></div>
+    </section>
+
+    <section id="user-management" class="admin-section">
+      <div class="section-header">
+        <h2>User Management</h2>
+      </div>
+
+      <div class="management-row">
+        <div class="panel-box compact-panel">
+          <div class="toolbar">
+            <input type="text" id="userSearch" placeholder="Search users" />
+            <select id="userRoleFilter">
+              <option value="">All roles</option>
+              <option value="admin">Admin</option>
+              <option value="employee">Employee</option>
+              <option value="customer">Customer</option>
+            </select>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Username</th>
+                  <th>Full Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Gender</th>
+                  <th>Phone</th>
+                  <th>Joined</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="usersTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel-box compact-panel">
+          <div class="section-header section-header-inline">
+            <h3>Add User</h3>
+          </div>
+          <form id="addUserForm" class="admin-form">
+            <label>
+              Username
+              <input type="text" name="username" required />
+            </label>
+            <label>
+              Full Name
+              <input type="text" name="full_name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required />
+            </label>
+            <label>
+              Phone
+              <input type="text" name="contact" />
+            </label>
+            <label>
+              Gender
+              <select name="gender">
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </label>
+            <label>
+              Role
+              <select name="role" required>
+                <option value="employee">Employee</option>
+                <option value="customer">Customer</option>
+              </select>
+            </label>
+            <button type="submit" class="save-button">Add user</button>
+          </form>
+          <p id="userMessage" class="admin-message"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu-management" class="admin-section">
+      <div class="section-header">
+        <h2>Menu Management</h2>
+      </div>
+
+      <div class="management-row">
+        <div class="panel-box compact-panel">
+          <div class="toolbar">
+            <input type="text" id="menuSearch" placeholder="Search menu items" />
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Status</th>
+                  <th>Image</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="menuTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel-box compact-panel">
+          <div class="section-header section-header-inline">
+            <h3>Add / Edit Menu Item</h3>
+          </div>
+          <form id="menuForm" class="admin-form" enctype="multipart/form-data">
+            <input type="hidden" name="menu_item_id" id="menuItemId" />
+            <label>
+              Item Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Category
+              <select name="category" required>
+                <option value="sundae">Sundae</option>
+                <option value="tea">Tea</option>
+                <option value="milk-tea">Milk Tea</option>
+                <option value="shake">Shake</option>
+                <option value="ice-cream">Ice cream</option>
+              </select>
+            </label>
+            <label>
+              Price (BDT)
+              <input type="number" name="price_bdt" min="0" step="0.01" required />
+            </label>
+            <label>
+              Description
+              <textarea name="description" rows="3"></textarea>
+            </label>
+            <label>
+              Availability
+              <select name="active">
+                <option value="1">Active</option>
+                <option value="0">Inactive</option>
+              </select>
+            </label>
+            <label>
+              Drink image
+              <input type="file" name="image" accept="image/*" />
+            </label>
+            <div class="button-row">
+              <button type="submit" class="save-button">Save item</button>
+              <button type="button" class="cancel-button" id="menuFormReset">Reset</button>
+            </div>
+          </form>
+          <p id="menuMessage" class="admin-message"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="branches" class="admin-section">
+      <div class="section-header">
+        <h2>Branches</h2>
+      </div>
+      <div class="management-row">
+        <div class="panel-box compact-panel">
+          <div class="toolbar">
+            <input type="text" id="branchSearch" placeholder="Search branches" />
+          </div>
+          <div class="branch-grid" id="branchList"></div>
+        </div>
+
+        <div class="panel-box compact-panel">
+          <div class="section-header section-header-inline">
+            <h3>Add / Edit Branch</h3>
+          </div>
+          <form id="branchForm" class="admin-form">
+            <input type="hidden" name="branch_id" id="branchId" />
+            <label>
+              Branch name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Status
+              <select name="status">
+                <option value="active">Active</option>
+                <option value="upcoming">Upcoming</option>
+              </select>
+            </label>
+            <label>
+              Map / location link
+              <input type="url" name="map_url" placeholder="https://maps.google.com/..." />
+            </label>
+            <div class="button-row">
+              <button type="submit" class="save-button">Save branch</button>
+              <button type="button" class="cancel-button" id="branchFormReset">Reset</button>
+            </div>
+          </form>
+          <p id="branchMessage" class="admin-message"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

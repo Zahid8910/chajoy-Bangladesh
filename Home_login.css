@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+
+
+body {
+    margin: 0;
+    font-family: 'times new roman', sans-serif;
+    background: #f4f4f4;
+    color: #1d1d1d;
+}
+
+.logo {
+    position: fixed;
+    top: -10px;
+    left: 40px;
+    width: 100px;
+    height: auto;
+    max-width: 100%;
+    z-index: 3;
+}
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  /*background: radial-gradient(circle at top right, #A1B61D 5%,#B0C047 10%,#BECA68 20%,#CCD586 35%,#DADFA4 45%, #ffffff 70%);*/
+  font-family: 'times new roman', sans-serif;
+  color: #1f2b12;
+  background: #FEFEFE;
+}
+
+.site_title {
+    position: fixed;
+    top: -2px;
+    left: 255px;
+    transform: translateX(-50%);
+    font-family: 'times new roman', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #A1B61D;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    padding-left: 0px;
+    z-index: 3;
+}
+
+.cus-role-label {
+  position: absolute;
+  top: 51px;
+  left: 137px;
+  color: var(--green);
+  font: 600 0.9rem;
+  font-family: 'times new roman',sans-serif;
+  z-index: 5;
+  color: #A1B61D;
+  font-weight: 600;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding: 3px 20px 0px;
+}
+
+.navbar {
+    position:fixed;
+    top: 25px;
+    left: 49%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 35px;
+    z-index: 3;
+    text-align: center;
+}
+
+.navbar a {
+    color:#A1B61D;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #A1B61D;
+    border-radius: 2px;
+    opacity: 0.9;
+    transition: width 0.3s ease;
+}
+
+  .navbar a:hover,
+  .navbar a:focus-visible,
+  .navbar a[aria-current="page"] {
+    color: #7d8f1d;
+}
+
+
+  .navbar a:hover::after,
+  .navbar a:focus-visible::after,
+  .navbar a[aria-current="page"]::after {
+    width: 100%;
+  }
+
+.edit_profile {
+  position: fixed;
+  top: 17px;
+  right: 285px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 5px 11px;
+  border: 0;
+  border-radius: 15px;
+  color: #ffffff;
+  background: #A1B61D;
+  font: 500 18px 'times new roman', sans-serif;
+  cursor: pointer;
+}
+
+.edit_icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.edit_profile:hover,
+.edit_profile:focus-visible {
+  background: #7d8f1d;
+}
+
+.order {
+    position: fixed;
+    top: 17px;
+    right: 17px;
+    margin-left: auto;
+    margin-right: 60px;
+    padding: 6px 10px;
+    border-radius: 15px;
+    background-color: #A1B61D;
+    color: #ffffff;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'times new roman', sans-serif;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.order_text {
+    padding: 4px ;
+    margin: 0;
+    line-height: 1;
+}
+
+.order_icon {
+    padding: 0;
+    width: 29px;
+    height: auto;
+    flex-shrink: 0;
+    transition: all 0.7s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order:hover .order_icon {
+    transform: translateX(62px);
+}
+
+.order:hover .order_text {
+  transition: all 0.7s;
+  opacity: 0;
+  filter: blur(5px);
+}
+
+.order:active .order_icon {
+  transform: scale(0.1);
+}
+
+.sign_out{
+    position: fixed;
+    top: 18px;
+    right: 255px;
+    margin-left: auto;
+    margin-right:6px;
+    padding: 6px 12px;
+    border-radius: 15px;
+    background-color: #A1B61D;
+    color: #ffffff;
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'times new roman', sans-serif;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.sign_out_text {
+    padding: 4px ;
+    margin: 0;
+    line-height: 1;
+}
+
+.signout_icon {
+    padding: 0;
+  width: 24px;
+    height: auto;
+    flex-shrink: 0;
+    transition: all 0.7s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.sign_out:hover .signout_icon {
+    transform: translateX(43px);
+}
+
+.sign_out:hover .sign_out_text {
+  transition: all 0.7s;
+  opacity: 0;
+  filter: blur(5px);
+}
+
+.sign_out:active .signout_icon {
+  transform: scale(0.1);
+}
+
+.edit_profile{
+    position: fixed;
+    top: 16px;
+    right: 23px;
+    padding: 2px 4px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'times new roman', sans-serif;
+    z-index: 3;
+    align-items: center;
+}
+
+.edit_icon{
+    width: 37px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: white;
+    border: none;
+    border-radius: 13px;
+    background-color: #A1B61D;
+}
+
+.boba_milk{
+    width: min(50vw, 700px);
+    height: auto;
+    max-width: 100%;
+    position: relative;
+    display: block;
+  margin: 100px 520px 0 auto;
+    z-index: 1;
+}
+
+.panel-title {
+    font-family: 'times new roman', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    COLOR: #FFFFFF;
+    
+}
+.company-panel {
+    width: 100%;
+    background: #A1B61D;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0px 70px 0;
+  margin: 0;
+    box-sizing: border-box;
+}
+
+.panel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    align-items: start;
+}
+
+.panel-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.panel-column a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 200;
+}
+
+  .info-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #FFFFFF;
+    font: inherit;
+    font-size: 18px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .info-link:hover,
+  .info-link:focus-visible,
+  .menu-link:hover,
+  .menu-link:focus-visible {
+    text-decoration: underline;
+  }
+
+  .info-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    padding: 0px 30px 32px;
+    align-items: center;
+    padding: 20px;
+    background: rgba(25, 35, 5, 0.48);
+    z-index: 10;
+  }
+
+  .info-modal.hidden {
+    display: none;
+  }
+
+  .info-modal-content {
+    position: relative;
+    width: min(520px, 100%);
+    min-height: 220px;
+    text-decoration: none;
+    border-radius: 14px;
+    background: #FFFFFF;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+  }
+
+  .info-modal-content h2 {
+    margin: 0 0 18px;
+    color: #A1B61D;
+    font-size: 28px;
+  }
+
+  .info-modal-content p {
+    margin: 0;
+    color: #333333;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .info-modal-link {
+    display: inline-block;
+    margin-top: 14px;
+    color: #7d8f1d;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  .info-modal-link.hidden {
+    display: none;
+  }
+
+  .info-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    border: 0;
+    background: transparent;
+    color: #5D6D0E;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+.panel-column a:first-child {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.panel-column a::after {
+    content: "";
+    position: absolute;
+    left: 13px;
+    bottom: 0;
+    top: 1750px;
+    width: 10%;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.heart{
+    width: 6%;
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    top: 300px;
+    right: 740px;
+    rotate: -50deg;
+    z-index: 2;
+}
+
+.nav_box{
+    background-color: #ffffff;
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.written_logo{
+    position: absolute;
+    top: 105px;
+    right: 510px;
+    width: 500px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.branch-map {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 40px;
+}
+
+.branch-pin {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.branch-pin::before,
+.branch-pin::after {
+  position: absolute;
+  content: "";
+}
+
+.branch-pin::before {
+  width: 30px;
+  height: 30px;
+  border-radius: 100% 100% 100% 0;
+  box-shadow: 0px 0px 0px 5px #A1B61D;
+  animation: anm-SL-3-move 1s linear infinite;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-46deg);
+  margin-top: -1080px;
+  z-index: 1;
+}
+
+.branch-pin::after {
+  width: 70px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: rgba(161, 182, 29, 0.3);
+  top: -1040px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 15px;
+  z-index: 1;
+}
+
+.branch-label {
+  position: absolute;
+  left: -40px;
+  top: -1010px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(48, 16, 1);
+  white-space: nowrap;
+  font-family: 'times new roman', sans-serif;
+  z-index: 1;
+}
+
+.brach-label:hover::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -100%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #A1B61D;
+}
+
+.pin-mirpur-10 {
+  left: 310px;
+  top: 150px;
+}
+
+.pin-laxmibazar {
+  left: 100px;
+  top: 300px;
+}
+
+.pin-uttara {
+  left: 340px;
+  top: 430px;
+}
+
+.pin-aftabnagar {
+  left: 110px;
+  top: 580px;
+}
+
+.pin-badda {
+  left: 380px;
+  top: 690px;
+}
+
+.pin-kochukhet {
+  left: 110px;
+  top: 870px;
+}
+
+.pin-mirpur-2 {
+  left: 1350px;
+  top: 150px;
+}
+
+.pin-mohammadpur {
+  left: 1110px;
+  top: 300px;
+}
+
+.pin-banasree {
+  left: 1350px;
+  top: 400px;
+}
+
+.pin-rampura {
+  left: 1140px;
+  top: 580px;
+}
+
+.pin-shonir-akhra {
+  left: 1320px;
+  top: 730px;
+}
+
+.pin-bashundhara {
+  left: 1130px;
+  top: 890px;
+}
+
+@keyframes anm-SL-3-move {
+  0% { top: 50%; }
+  50% { top: 45%; }
+  100% { top: 50%; }
+}

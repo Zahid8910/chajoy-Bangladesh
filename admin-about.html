@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About ChaJoy Bangladesh | Admin</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css" />
+  <script src="auth-nav.js" defer></script>
+  <script src="nav-animation.js" defer></script>
+</head>
+<body class="about-page admin-page">
+  <header class="topbar admin-topbar">
+    <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="logo" />
+    <h2 class="site_title">ChaJoy Bangladesh</h2>
+    <nav class="navbar admin-navbar" aria-label="Admin navigation">
+      <a href="public/admin.php?action=admin">Dashboard</a>
+      <a href="public/admin.php?action=admin_users">Users</a>
+      <a href="public/admin.php?action=admin_branches">Branches</a>
+      <a href="admin-about.html" aria-current="page">About</a>
+      <a href="admin-reviews.html" onclick="alert('Reviews are not available yet, but they will be available soon.'); return false;">Reviews</a>
+      <a href="admin-contact.html">Contact</a>
+    </nav>
+    <div class="admin-header-actions">
+      <button type="button" class="nav-profile-link profile-button" onclick="window.location.href='public/admin.php?action=admin'">
+        <img src="edit_profile.png" alt="Profile icon" class="profile-icon" />
+        <span>Profile</span>
+      </button>
+      <button type="button" class="nav-signout" onclick="sessionStorage.removeItem('chajoyLoggedInRole'); window.location.href='home.html'">Logout</button>
+    </div>
+    <div class="nav_box"></div>
+  </header>
+
+  <main class="about-content">
+    <section class="about-hero" aria-labelledby="about-title">
+      <div>
+        <p class="about-kicker">A little more about us</p>
+        <h1 id="about-title">Made for a little more joy.</h1>
+        <p class="about-lead">ChaJoy is a Bangladeshi drink and refreshment destination serving freshly prepared tea, milk tea, boba, shakes, sundaes, and ice cream. We make it easy to find a favorite drink, share a break with friends, or take something refreshing with you.</p>
+      </div>
+      <img src="about.png" alt="ChaJoy refreshment illustration" class="about-image">
+    </section>
+
+    <section class="about-details" aria-label="About ChaJoy">
+      <article>
+        <h2>Freshly prepared</h2>
+        <p>Our drinks and desserts are prepared at the branch so customers can enjoy them fresh and made to order.</p>
+      </article>
+      <article>
+        <h2>Something for everyone</h2>
+        <p>Explore fruit teas, classic teas, milk tea, boba, shakes, sundaes, and ice cream across our menu.</p>
+      </article>
+      <article>
+        <h2>Find your ChaJoy</h2>
+        <p>Visit your nearest branch for dine-in or takeaway service, and enjoy a comfortable stop whenever you need a refreshment.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

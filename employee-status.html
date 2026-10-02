@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branch Status | ChaJoy Employee</title>
+  <link rel="stylesheet" href="employee.css">
+  <script src="employee-status.js" defer></script>
+  <script src="employee-profile.js" defer></script>
+  <script src="nav-animation.js" defer></script>
+</head>
+<body>
+  <header class="employee-header">
+    <a class="brand" href="employee.html">
+      <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="employee-logo">
+      <span class="employee-site-title">ChaJoy Bangladesh</span>
+      <span class="employee-role-label">Employee Desk</span>
+    </a>
+    <nav class="employee-nav" aria-label="Employee navigation">
+      <a href="employee.html">Dashboard</a>
+      <a href="employee-status.html" aria-current="page">Status</a>
+      <a href="menu.html">Menu</a>
+      <a href="branches.html">Branches</a>
+      <a href="employee-about.html">About</a>
+      <a href="employee-reviews.html">Reviews</a>
+      <a href="employee-contact.html">Contact</a>
+    </nav>
+    <div class="employee-header-actions">
+      <button type="button" id="employeeProfileButton" class="employee-profile-button">
+        <img src="edit_profile.png" alt="Profile icon" class="employee-profile-icon">
+        <span>Profile</span>
+      </button>
+      <button type="button" id="employeeSignOut" class="sign-out" onclick="sessionStorage.removeItem('chajoyLoggedInRole'); window.location.href='home.html'">
+        <img src="sign_out.png" alt="" class="employee-sign-out-icon">
+        <span>Sign out</span>
+      </button>
+    </div>
+  </header>
+  <main class="employee-main">
+    <section class="welcome-section">
+      <p class="eyebrow">Branch status</p>
+      <h1>Menu availability</h1>
+      <p>Choose a branch to update which menu items customers can order.</p>
+    </section>
+    <section class="branch-picker" aria-labelledby="branchPickerTitle">
+      <label for="employeeBranch" id="branchPickerTitle">Choose your branch</label>
+      <select id="employeeBranch">
+        <option value="">Select a branch</option>
+        <option>Laxmibazar Branch</option><option>Uttara Branch</option><option>Rampura Branch</option><option>Mohammadpur Branch</option><option>Banasree Branch</option><option>Badda Branch</option><option>Mirpur 2 Branch</option><option>Mirpur 10 Branch</option><option>Bashundhara Branch</option><option>Kochukhet Branch</option>
+      </select>
+    </section>
+    <section class="inventory-section" aria-labelledby="inventoryTitle">
+      <div class="orders-heading"><div><p class="eyebrow">Customer menu</p><h2 id="inventoryTitle">Update item availability</h2></div><span class="order-count">Applies to selected branch</span></div>
+      <div id="inventoryList" class="inventory-list"></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChaJoy Bangladesh</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="home.js" defer></script>
+    <script src="nav-animation.js" defer></script>
+</head>
+<body class="home-page">
+    <header class="topbar">
+        <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="logo">
+        <img src="written_logo.png" alt="ChaJoy Bangladesh Logo" class="written_logo">
+        <h2 class="site_title">ChaJoy Bangladesh</h2>
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="branches.html">Branches</a>
+            <a href="about.html">About</a>
+            <a href="reviews.html" onclick="alert('Reviews are not available yet, but they will be available soon.'); return false;">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <button class="sign_up" onclick="window.location.href='Sign_up.html'">
+            <img src="Signup.png" alt="Sign Up Icon" class="signup_icon">
+            <span class="sign_up_text">Sign Up</span>
+        </button>
+        <button class="order" onclick="window.location.href='menu.html'">
+            <img src="order.png" alt="Order Icon" class="order_icon">
+            <span class="order_text">Start an Order</span>
+        </button>
+        <div class="nav_box"></div>
+    </header>
+        <img src="milk_tea.png" alt="Boba Milk Tea" class="boba_milk">
+        <img src="heart.png" alt="Heart" class="heart">
+
+    <div class="branch-map">
+        <a href="https://www.google.com/maps/place/Chajoy+Laxmibazar/@23.7083441,90.4060124,16z/data=!4m10!1m2!2m1!1sCha+Joy+Laxmibazar+Branch!3m6!1s0x3755b900025adaa3:0x9d59057212f31669!8m2!3d23.7083441!4d90.4155396!15sChlDaGEgSm95IExheG1pYmF6YXIgQnJhbmNokgEOaWNlX2NyZWFtX3Nob3DgAQA!16s%2Fg%2F11ntnlfb8q?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-laxmibazar" target="_blank" rel="noopener noreferrer" title="Laxmibazar Branch">
+            <span class="branch-label">Laxmibazar Branch</span>
+        </a>
+        <a href="https://www.google.com/maps/place/CHAJOY+UTTARA+(BNS)/@23.8712301,90.2768466,12z/data=!4m10!1m2!2m1!1sCha+Joy+Uttara+Branch!3m6!1s0x3755c57adb1c975f:0x3519ac92a810f294!8m2!3d23.8712301!4d90.4001867!15sChVDaGEgSm95IFV0dGFyYSBCcmFuY2haFyIVY2hhIGpveSB1dHRhcmEgYnJhbmNokgEOaWNlX2NyZWFtX3Nob3DgAQA!16s%2Fg%2F11kj0t8ydg?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-uttara" target="_blank" rel="noopener noreferrer" title="Uttara Branch">
+            <span class="branch-label">Uttara Branch</span>
+        </a>
+        <a href="https://www.google.com/maps/place/ChaJoy+Rampura+Bazar/@23.7601859,90.4094083,16z/data=!4m10!1m2!2m1!1sCha+Joy+Laxmibazar+Branch!3m6!1s0x3755b90052f6d4ad:0x6bd754473e010fa1!8m2!3d23.7601859!4d90.4189355!15sChlDaGEgSm95IExheG1pYmF6YXIgQnJhbmNoWhsiGWNoYSBqb3kgbGF4bWliYXphciBicmFuY2iSAQ5pY2VfY3JlYW1fc2hvcOABAA!16s%2Fg%2F11zc2tb5nt?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-rampura" target="_blank" rel="noopener noreferrer" title="Rampura Branch">
+            <span class="branch-label">Rampura Branch</span>
+        </a>
+        <a href="https://www.google.com/maps/place/CHAJOY+%7C+Mohammadpur/@23.7648558,90.3558406,17z/data=!4m10!1m2!2m1!1sCha+Joy+Mohammadpur+Branch!3m6!1s0x3755c1004b2cda3d:0xc12777e96e2167de!8m2!3d23.7648558!4d90.3606042!15sChpDaGEgSm95IE1vaGFtbWFkcHVyIEJyYW5jaFocIhpjaGEgam95IG1vaGFtbWFkcHVyIGJyYW5jaJIBDmljZV9jcmVhbV9zaG9w4AEA!16s%2Fg%2F11zgq0yxqq?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-mohammadpur" target="_blank" rel="noopener noreferrer" title="Mohammadpur Branch">
+            <span class="branch-label">Mohammadpur <br> Branch</span>
+        </a>
+        <a href="https://www.google.com/maps/place/ChaJoy+-+Banasree/@23.7610628,90.3982769,14z/data=!4m10!1m2!2m1!1sCha+Joy+Banasree+Branch!3m6!1s0x3755b90018ed35e9:0xe44bcfd7f4154804!8m2!3d23.7610628!4d90.4363857!15sChdDaGEgSm95IEJhbmFzcmVlIEJyYW5jaFoZIhdjaGEgam95IGJhbmFzcmVlIGJyYW5jaJIBDmljZV9jcmVhbV9zaG9w4AEA!16s%2Fg%2F11zcml5psr?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-banasree" target="_blank" rel="noopener noreferrer" title="Banasree Branch">
+            <span class="branch-label">Banasree Branch</span>
+        </a>
+        <a href="https://www.google.com/maps/place/CHAJOY+Badda/@23.7862882,90.3984949,14z/data=!4m10!1m2!2m1!1sCha+Joy+Badda+Branch!3m6!1s0x3755c70034d3051f:0xdec835417b821f94!8m2!3d23.7728106!4d90.4253219!15sChRDaGEgSm95IEJhZGRhIEJyYW5jaFoWIhRjaGEgam95IGJhZGRhIGJyYW5jaJIBDmljZV9jcmVhbV9zaG9w4AEA!16s%2Fg%2F11yxxt1fmh?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-badda" target="_blank" rel="noopener noreferrer" title="Badda Branch">
+            <span class="branch-label">Badda Branch</span>
+        </a>
+        <div class="branch-pin pin-shonir-akhra" target="_blank" rel="noopener noreferrer" title="Shonir Akhra Branch">
+            <span class="branch-label">Shonir Akhra Branch <br> (Upcoming)</span></div>
+        <div class="branch-pin pin-aftabnagar" target="_blank" rel="noopener noreferrer" title="Aftabnagar Branch">
+            <span class="branch-label">Aftabnagar Branch <br> (Upcoming)</span>
+        </div>
+        <a href="https://www.google.com/maps/place/CHAJOY+Mirpur+2/@23.8050607,90.2868488,13z/data=!4m10!1m2!2m1!1sCha+Joy+Uttara+Branch!3m6!1s0x3755c1003fa5e4a5:0xfea52b21bb2771c7!8m2!3d23.8050607!4d90.3630665!15sChVDaGEgSm95IFV0dGFyYSBCcmFuY2iSAQtjb2ZmZWVfc2hvcOABAA!16s%2Fg%2F11nt_c7z83?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-mirpur-2" target="_blank" rel="noopener noreferrer" title="Mirpur 2 Branch">
+            <span class="branch-label">Mirpur 2 Branch</span>
+        </a>
+        <a href="https://www.google.com/maps/place/CHAJOY+-+Mirpur+10/@23.8066217,90.3338703,14z/data=!4m10!1m2!2m1!1sCha+Joy+Mirpur+10+Branch!3m6!1s0x3755c1007a1a09fd:0x1deed3fd4574897c!8m2!3d23.8066217!4d90.3719791!15sChhDaGEgSm95IE1pcnB1ciAxMCBCcmFuY2haGiIYY2hhIGpveSBtaXJwdXIgMTAgYnJhbmNokgEOaWNlX2NyZWFtX3Nob3DgAQA!16s%2Fg%2F11z73kf98q?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-mirpur-10" target="_blank" rel="noopener noreferrer" title="Mirpur 10 Branch">
+            <span class="branch-label">Mirpur 10 Branch</span>
+        </a>
+        <a href="https://www.google.com/maps/place/ChaJoy+Bashundhara/@23.7862882,90.3984949,14z/data=!4m10!1m2!2m1!1sCha+Joy+Badda+Branch!3m6!1s0x3755c10054cffbe1:0x54d61c17d4172de7!8m2!3d23.8117955!4d90.4218479!15sChRDaGEgSm95IEJhZGRhIEJyYW5jaFoWIhRjaGEgam95IGJhZGRhIGJyYW5jaJIBDmljZV9jcmVhbV9zaG9w4AEA!16s%2Fg%2F11nqvqvtb7?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-bashundhara" target="_blank" rel="noopener noreferrer" title="Bashundhara Branch">
+            <span class="branch-label">Bashundhara Branch</span>
+        </a>
+        <a href="https://www.google.com/maps/place/Chajoy+-+Kochukhet/@23.8712301,90.2768466,12z/data=!4m10!1m2!2m1!1sCha+Joy+Uttara+Branch!3m6!1s0x3755c7000e7a1f35:0xfd6b7e715ff2caa6!8m2!3d23.7935693!4d90.3881049!15sChVDaGEgSm95IFV0dGFyYSBCcmFuY2haFyIVY2hhIGpveSB1dHRhcmEgYnJhbmNokgEOaWNlX2NyZWFtX3Nob3DgAQA!16s%2Fg%2F11yv6307r7?entry=ttu&g_ep=EgoyMDI2MDgyNS4wIKXMDSoASAFQAw%3D%3D" class="branch-pin pin-kochukhet" target="_blank" rel="noopener noreferrer" title="Kochukhet Branch">
+            <span class="branch-label">Kochukhet Branch</span>
+        </a>
+    </div>
+    <section class="company-panel">
+        <div class="panel-grid">
+            <div class="panel-column">
+                <p class="panel-title">About Us</p>
+                <button type="button" class="info-link" data-info-title="Our Company">Our Company</button>
+                <a href="menu.html" class="menu-link">Our Drinks</a>
+                <button type="button" class="info-link" data-info-title="About CHAJOY">About CHAJOY</button>
+                <button type="button" class="info-link" data-info-title="Customer Service">Customer Service</button>
+                <button type="button" class="info-link" data-info-title="Contact Us">Contact Us</button>
+            </div>
+
+            <div class="panel-column">
+                <p class="panel-title">Careers</p>
+                <button type="button" class="info-link" data-info-title="Culture and Values">Culture and Values</button>
+                <button type="button" class="info-link" data-info-title="Belonging at CHAJOY">Belonging at CHAJOY</button>
+                <button type="button" class="info-link" data-info-title="Job Openings">Job Openings</button>
+            </div>
+
+            <div class="panel-column">
+                <p class="panel-title">For Business Partners</p>
+                <button type="button" class="info-link" data-info-title="Franchise Opportunities">Franchise Opportunities</button>
+                <button type="button" class="info-link" data-info-title="Suppliers">Suppliers</button>
+            </div>
+
+            <div class="panel-column">
+                <p class="panel-title">Order and Pick Up</p>
+                <a href="menu.html" class="menu-link">Order on the Web</a>
+                <button type="button" class="info-link" data-info-title="Payment">Payment</button>
+                <button type="button" class="info-link" data-info-title="Order and Pick Up Options">Order and Pick Up Options</button>
+            </div>
+        </div>
+    </section>
+    <div id="infoModal" class="info-modal hidden" role="dialog" aria-modal="true" aria-labelledby="infoModalTitle">
+        <div class="info-modal-content">
+            <button type="button" class="info-modal-close" id="infoModalClose" aria-label="Close">&times;</button>
+            <h2 id="infoModalTitle">Information</h2>
+            <p id="infoModalText">Add information for this topic here.</p>
+            <a id="infoModalLink" class="info-modal-link hidden" href="https://www.instagram.com/channel/AbY_RgxwM0HD3h9C/" target="_blank" rel="noopener noreferrer">Job Updates</a>
+        </div>
+    </div>
+</body>
+</html>

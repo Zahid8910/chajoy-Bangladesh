@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChaJoy Branches</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="employee.css" />
+  <script src="auth-nav.js" defer></script>
+  <script src="employee-profile.js" defer></script>
+  <style>
+    body { margin: 0; background: #f7f8f0; color: #243219; }
+    .branch-page { padding: 30px 5vw 60px; }
+    .branch-header { margin: 20px 0 26px; }
+    .branch-header h1 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); color: #53620b; }
+    .branch-search { max-width: 420px; margin-bottom: 26px; }
+    .branch-search input { width: 100%; border: 1px solid #dfe6c4; border-radius: 12px; padding: 12px 14px; font-size: 1rem; }
+    .branches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+    .branch-card { background: #fff; border: 1px solid #dfe6c4; border-radius: 18px; overflow: hidden; box-shadow: 0 10px 22px rgba(83, 98, 11, 0.08); }
+    .branch-map { border: 0; width: 100%; height: 180px; display: flex; align-items: center; justify-content: center; text-align: center; color: #53620b; background: linear-gradient(135deg, #edf5d0, #f8fbe9); font-weight: 700; }
+    .branch-card-body { padding: 18px 18px 22px; }
+    .branch-card-body h3 { margin: 0 0 6px; color: #1f2d16; }
+    .branch-location { margin: 0 0 12px; color: #687255; }
+    .branch-status { display: inline-block; padding: 5px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+    .branch-status.active { background: #edf5d0; color: #53620b; }
+    .branch-status.upcoming { background: #f3e8d2; color: #7a5a1d; }
+    .branch-actions { margin-top: 14px; }
+    .branch-actions a { display: inline-block; padding: 10px 12px; background: #a1b61d; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; }
+    .branch-message { color: #687255; font-weight: 700; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body class="branches-page">
+  <header class="topbar">
+    <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="logo">
+    <h2 class="site_title">ChaJoy Bangladesh</h2>
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="home.html" data-role-home>Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="branches.html" aria-current="page">Branches</a>
+      <a href="about.html">About</a>
+      <a href="reviews.html" onclick="alert('Reviews are not available yet, but they will be available soon.'); return false;">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="sign_up" type="button" onclick="window.location.href='Sign_up.html'">
+      <img src="Signup.png" alt="" class="signup_icon">
+      <span class="sign_up_text">Sign Up</span>
+    </button>
+    <button class="sign_out public-sign-out" type="button" hidden>
+      <img src="sign_out.png" alt="" class="signout_icon">
+      <span class="sign_out_text">Sign Out</span>
+    </button>
+    <button class="order" type="button" onclick="window.location.href='menu.html'">
+      <img src="order.png" alt="" class="order_icon">
+      <span class="order_text">Start an Order</span>
+    </button>
+    <div class="nav_box"></div>
+  </header>
+
+  <main class="branch-page">
+    <div class="branch-header">
+      <p class="eyebrow">Locations</p>
+      <h1>Our branches</h1>
+    </div>
+
+    <div class="branch-search">
+      <input type="search" id="branchSearch" placeholder="Search by branch name or area" />
+    </div>
+
+    <div class="branches-grid" id="branchGrid">
+      <p class="branch-message">Loading branches...</p>
+    </div>
+  </main>
+
+  <script src="branches.js" defer></script>
+</body>
+</html>

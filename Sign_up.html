@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="signup.css?v=forgot-password-fixes" />
+  <script src="sign_up.js" defer></script>
+  <script src="nav-animation.js" defer></script>
+</head>
+<body>
+  <div id="roleModal" class="role-modal hidden">
+    <div class="role-modal-content">
+      <h3 id="modalTitle">Customer's Dashboard</h3>
+      <p id="modalMessage">Welcome customer.</p>
+      <button type="button" id="proceedBtn">Proceed</button>
+    </div>
+  </div>
+
+  <div id="forgotPasswordModal" class="forgot-modal hidden" role="dialog" aria-modal="true" aria-labelledby="forgotPasswordTitle">
+    <div class="forgot-modal-content">
+      <button type="button" class="forgot-modal-close" id="forgotPasswordClose" aria-label="Close">&times;</button>
+      <h3 id="forgotPasswordTitle">Reset your password</h3>
+      <p id="forgotPasswordInstructions">Select Employee or Customer and enter the registration email before opening password recovery.</p>
+      <form id="forgotPasswordForm">
+        <p id="resetQuestionPrompt" class="reset-question-prompt" hidden></p>
+        <label for="resetAnswer">Answer</label>
+        <input type="text" id="resetAnswer" placeholder="Enter your answer" required />
+        <div id="newPasswordFields" hidden>
+          <label for="resetNewPassword">New password</label>
+          <input type="password" id="resetNewPassword" minlength="6" autocomplete="new-password" />
+        </div>
+        <button type="submit" id="forgotPasswordSubmit">Submit answer</button>
+      </form>
+      <p id="resetMessage" class="reset-message" role="status"></p>
+    </div>
+  </div>
+
+  <header class="topbar">
+        <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="logo">
+        <h2 class="site_title">ChaJoy Bangladesh</h2>
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="branches.html">Branches</a>
+            <a href="about.html">About</a>
+            <a href="reviews.html" onclick="alert('Reviews are not available yet, but they will be available soon.'); return false;">Reviews</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav_box"></div>
+    </header>
+ <div class="Signup">
+    <!--Login-->
+    <div class="box"></div>
+    <div class="e_box"></div>
+    <div class="p_box"></div>
+    <h2 class="login">Login</h2>
+    <p class="email_text">Email</p>
+
+    <p class="identity_L">Login as</p>
+    <label class="identity_L_radio">
+    <input type="radio" name="identity" value="admin">Admin</label>
+    <label class="identity_L_radio">
+    <input type="radio" name="identity" value="employee">Employee</label>
+    <label class="identity_L_radio">
+    <input type="radio" name="identity" value="customer">Customer</label>
+
+    <img src="Email1.png" alt="sign" class="email1">
+    <p class="pass_text">Password</p>
+    <input type="email" class="e_input" id="loginEmail" placeholder="Enter your email" required />
+    <input type="password" class="p_input" id="loginPassword" placeholder="Enter your password" required />
+    <img src="Lock.png" alt="lock" class="lock_sign">
+    <div id="loginError" class="login-error" aria-live="polite"></div>
+    <button type="button" class="login_button" id="loginButton">Login</button>
+    <button type="button" class="forgot_password" id="forgotPasswordButton">Forgot Password?</button>
+ </div>
+ <label class="checkbox">
+  <input type="checkbox" />
+  <div class="checkmark">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <g
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect
+          x="1.5"
+          y="1.5"
+          width="21"
+          height="21"
+          rx="5"
+          ry="5"
+          stroke-width="3"
+        ></rect>
+        <polyline points="7 10 12 16 22 2" stroke-width="4"></polyline>
+      </g>
+    </svg>
+    <span>Remember Me!</span>
+  </div>
+  <button class="register" onclick="window.location.href='Registration.html'">
+            <img src="registration.png" alt="Icon" class="register_img">
+            <span class="register_text">Registration</span>
+        </button>
+</body>
+</html>

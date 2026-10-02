@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About ChaJoy Bangladesh | Employee</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="employee.css" />
+  <script src="nav-animation.js" defer></script>
+  <script src="employee-profile.js" defer></script>
+</head>
+<body>
+  <header class="employee-header">
+    <a class="brand" href="employee.html">
+      <img src="logo-b.png" alt="ChaJoy Bangladesh Logo" class="employee-logo">
+      <span class="employee-site-title">ChaJoy Bangladesh</span>
+      <span class="employee-role-label">Employee Desk</span>
+    </a>
+    <nav class="employee-nav" aria-label="Employee navigation">
+      <a href="employee.html">Dashboard</a>
+      <a href="employee-status.html">Status</a>
+      <a href="menu.html">Menu</a>
+      <a href="branches.html">Branches</a>
+      <a href="employee-about.html" aria-current="page">About</a>
+      <a href="employee-reviews.html" onclick="alert('Reviews are not available yet, but they will be available soon.'); return false;">Reviews</a>
+      <a href="employee-contact.html">Contact</a>
+    </nav>
+    <div class="employee-header-actions">
+      <button type="button" id="employeeProfileButton" class="employee-profile-button" onclick="window.location.href='employee.html'">
+        <img src="edit_profile.png" alt="Profile icon" class="employee-profile-icon">
+        <span>Profile</span>
+      </button>
+      <button type="button" id="employeeSignOut" class="sign-out" onclick="sessionStorage.removeItem('chajoyLoggedInRole'); window.location.href='home.html'">
+        <img src="sign_out.png" alt="" class="employee-sign-out-icon">
+        <span>Sign out</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="about-content">
+    <section class="about-hero" aria-labelledby="about-title">
+      <div>
+        <p class="about-kicker">A little more about us</p>
+        <h1 id="about-title">Made for a little more joy.</h1>
+        <p class="about-lead">ChaJoy is a Bangladeshi drink and refreshment destination serving freshly prepared tea, milk tea, boba, shakes, sundaes, and ice cream. We make it easy to find a favorite drink, share a break with friends, or take something refreshing with you.</p>
+      </div>
+      <img src="about.png" alt="ChaJoy refreshment illustration" class="about-image">
+    </section>
+
+    <section class="about-details" aria-label="About ChaJoy">
+      <article>
+        <h2>Freshly prepared</h2>
+        <p>Our drinks and desserts are prepared at the branch so customers can enjoy them fresh and made to order.</p>
+      </article>
+      <article>
+        <h2>Something for everyone</h2>
+        <p>Explore fruit teas, classic teas, milk tea, boba, shakes, sundaes, and ice cream across our menu.</p>
+      </article>
+      <article>
+        <h2>Find your ChaJoy</h2>
+        <p>Visit your nearest branch for dine-in or takeaway service, and enjoy a comfortable stop whenever you need a refreshment.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
